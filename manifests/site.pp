@@ -1,4 +1,4 @@
-node 'serverdhcp.mcng.local' {
+node 'serverdhcp.mydomain.local' {
   include site::add_host
 #  include tftp
 }
