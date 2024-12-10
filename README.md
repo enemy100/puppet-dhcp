@@ -6,7 +6,7 @@
 
 2. **Install DHCP server**
 ```bash
-dnf install dhcpd-server
+dnf install dhcp-server
 ```
 3. **Configure the YAML files**
 
