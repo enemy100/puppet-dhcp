@@ -1,7 +1,7 @@
 class site::add_host {
   $server_name = lookup('server_name')
   $domain = lookup('domain')
-  $fqdn = "${server_name}.mcng.local"
+  $fqdn = "${server_name}.mydomain.local"
 
   if $facts['networking']['fqdn'] == $fqdn {
 #    include dns
