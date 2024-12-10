@@ -1,0 +1,34 @@
+---
+hosts:
+  - hostname: "node2"
+    ip_address: "192.168.130.20"
+    mac_address: "00:00:27:34:84:7a"
+
+  - hostname: "node3"
+    ip_address: "192.168.130.17"
+    mac_address: "00:50:56:3D:73:40"
+
+##############################################################################
+##############################################################################
+##############################################################################
+#
+# HOW TO USE THE HOST YAML FILE
+# 
+#
+# To Add a HOST, just add following the sctructure below:
+#
+# hostname: "myclient1"
+# ip_address: "x.x.x.x."
+# mac_address: "x.x.x.x"
+#
+# hostname: "myclient2"
+# ip_address: "x.x.x.x"
+# mac_address: "x.x.x.x"
+#
+#
+# To remove a HOST, just remove it from the YAML
+#
+#
+#To apply the changes, execute "puppet agent -t"
+#
+

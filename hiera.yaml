@@ -1,0 +1,11 @@
+version: 5
+hierarchy:
+  - name: "Common"
+    data_hash: yaml_data
+    path: "/etc/puppetlabs/code/environments/production/data/common.yaml"
+  - name: "DHCP Config"
+    data_hash: yaml_data
+    path: "/etc/puppetlabs/code/environments/production/data/dhcp_config.yaml"
+  - name: "Hosts"
+    data_hash: yaml_data
+    path: "/etc/puppetlabs/code/environments/production/modules/site/data/hosts.yaml"

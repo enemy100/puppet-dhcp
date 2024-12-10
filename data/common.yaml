@@ -1,0 +1,7 @@
+---
+domain: 'mcng.local'
+server_name: 'serverdhcp'
+server_ip: '192.168.130.10'
+server_fqdn: 'serverdhcp.mcng.local'
+server_alias: 'dhcppserver'
+
