@@ -3,7 +3,6 @@
 1. **Install Puppet server**
 - For this, the follow server is using:
   - Puppet v8
-If need to install Puppet server, follow the guide:
 
 2. **Install DHCP server**
 ```bash
@@ -19,7 +18,7 @@ They have all the necessary dhcp parameters for a basic dhcp server, It is possi
 
 4. **Add or remove hosts**
 
-In this file below, you can add or remove hosts:
+In this file below, you can add/edit or remove hosts:
 
 ![image](https://github.com/user-attachments/assets/53267c5f-d56a-4a99-960e-60c8734cdeef)
 
@@ -34,4 +33,15 @@ initially, the dhcpd conf will not have anything as shown:
 puppet agent -t
 ```
 
-   
+![image](https://github.com/user-attachments/assets/1a18467b-8df1-4ce6-a353-acd666ea0ef6)
+
+file /etc/dhcpd.conf
+
+![image](https://github.com/user-attachments/assets/3bafbe40-655a-45a3-b506-d417b68d6178)
+
+
+# Ideas
+We have a class called `tftp` that manages the `tftp.service`. If you want to use it, just uncomment the class below:
+
+![image](https://github.com/user-attachments/assets/049e6835-7d38-404a-9b24-eae7762e7586)
+
