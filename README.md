@@ -12,7 +12,8 @@ dnf install dhcpd-server
 
 We have 2 files: common.yaml and dhcp_config.yaml
 
-![image](https://github.com/user-attachments/assets/8b322228-0f15-47e1-b18c-7e69fc9ed9ee)
+![image](https://github.com/user-attachments/assets/3f724825-bf3f-4591-a90b-6f0ccbb717ad)
+
 
 They have all the necessary dhcp parameters for a basic dhcp server, It is possible to change it if you want.  
 
@@ -43,5 +44,6 @@ file /etc/dhcpd.conf
 # Ideas
 We have a class called `tftp` that manages the `tftp.service`. If you want to use it, just uncomment the class below:
 
-![image](https://github.com/user-attachments/assets/049e6835-7d38-404a-9b24-eae7762e7586)
+![image](https://github.com/user-attachments/assets/d461244b-ad05-44be-89af-ff6b74a68947)
+
 
