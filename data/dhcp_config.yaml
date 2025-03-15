@@ -1,10 +1,25 @@
+---
 dhcp:
-  range_start: '192.168.130.100'
-  range_end: '192.168.130.230'
-  routers: '192.168.130.10'
-  subnet_mask: '255.255.255.0'
-  subnet_network: '192.168.130.0'
-  domain_name_servers: '192.168.130.10'
-  default_lease_time: 21600
-  max_lease_time: 43200
-  interfaces: 'ens224'
+  domain_name: 'example.com'
+  domain_name_servers:
+    - '192.168.1.10'
+    - '192.168.1.11'
+  default_lease_time: 3600
+  max_lease_time: 86400
+  networks:
+    office:
+      subnet: '192.168.1.0'
+      netmask: '255.255.255.0'
+      routers: '192.168.1.1'
+      broadcast: '192.168.1.255'
+      pools:
+        - range_start: '192.168.1.100'
+          range_end: '192.168.1.200'
+    wifi:
+      subnet: '192.168.2.0'
+      netmask: '255.255.255.0'
+      routers: '192.168.2.1'
+      broadcast: '192.168.2.255'
+      pools:
+        - range_start: '192.168.2.100'
+          range_end: '192.168.2.200' 

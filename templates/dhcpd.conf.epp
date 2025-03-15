@@ -1,0 +1,56 @@
+<%- | 
+  String $domain_name,
+  Array[String] $domain_name_servers,
+  Integer $default_lease_time,
+  Integer $max_lease_time,
+  Hash $networks,
+  Hash $hosts
+| -%>
+# DHCP Server Configuration
+# Managed by Puppet - DO NOT EDIT
+
+# Global options
+option domain-name "<%= $domain_name %>";
+option domain-name-servers <%= $domain_name_servers.join(', ') %>;
+
+default-lease-time <%= $default_lease_time %>;
+max-lease-time <%= $max_lease_time %>;
+
+# Enable DHCP failover
+authoritative;
+
+# Log to the DHCP log
+log-facility local7;
+
+# Network configurations
+<% $networks.each |$network_name, $network_config| { -%>
+# <%= $network_name %> network
+subnet <%= $network_config['subnet'] %> netmask <%= $network_config['netmask'] %> {
+  option routers <%= $network_config['routers'] %>;
+  option subnet-mask <%= $network_config['netmask'] %>;
+  option broadcast-address <%= $network_config['broadcast'] %>;
+  
+  <% if $network_config['pools'] { -%>
+  <% $network_config['pools'].each |$pool| { -%>
+  pool {
+    range <%= $pool['range_start'] %> <%= $pool['range_end'] %>;
+  }
+  <% } -%>
+  <% } -%>
+}
+
+<% } -%>
+
+# Host configurations
+<% $hosts.each |$hostname, $host_config| { -%>
+host <%= $hostname %> {
+  hardware ethernet <%= $host_config['mac'] %>;
+  fixed-address <%= $host_config['ip'] %>;
+  <% if $host_config['options'] { -%>
+  <% $host_config['options'].each |$option, $value| { -%>
+  option <%= $option %> <%= $value %>;
+  <% } -%>
+  <% } -%>
+}
+
+<% } -%> 
